@@ -1,94 +1,58 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Contact -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Contact %></h1>
+</div>
 
-<p>
-  <strong>First name:</strong>
-  <%= @contact.first_name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:first_name) %></dt>
+      <dd><pre class="prettyprint"><%= @contact.first_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:middle_name) %></dt>
+      <dd><pre class="prettyprint"><%= @contact.middle_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:last_name) %></dt>
+      <dd><pre class="prettyprint"><%= @contact.last_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:email_1) %></dt>
+      <dd><pre class="prettyprint"><%= @contact.email_1 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:email_2) %></dt>
+      <dd><pre class="prettyprint"><%= @contact.email_2 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:email_3) %></dt>
+      <dd><pre class="prettyprint"><%= @contact.email_3 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:phone_cell) %></dt>
+      <dd><pre class="prettyprint"><%= @contact.phone_cell %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:phone_home) %></dt>
+      <dd><pre class="prettyprint"><%= @contact.phone_home %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:phone_work) %></dt>
+      <dd><pre class="prettyprint"><%= @contact.phone_work %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:phone_other) %></dt>
+      <dd><pre class="prettyprint"><%= @contact.phone_other %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:fax) %></dt>
+      <dd><pre class="prettyprint"><%= @contact.fax %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:address) %></dt>
+      <dd><pre class="prettyprint"><%= @contact.address %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:address_2) %></dt>
+      <dd><pre class="prettyprint"><%= @contact.address_2 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:city) %></dt>
+      <dd><pre class="prettyprint"><%= @contact.city %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:state) %></dt>
+      <dd><pre class="prettyprint"><%= @contact.state %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:zip) %></dt>
+      <dd><pre class="prettyprint"><%= @contact.zip %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:birthday) %></dt>
+      <dd><pre class="prettyprint"><%= @contact.birthday %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:notes) %></dt>
+      <dd><pre class="prettyprint"><%= @contact.notes %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Middle name:</strong>
-  <%= @contact.middle_name %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              contacts_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_contact_path(@contact), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              contact_path(@contact),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @contact.last_name %>
-</p>
-
-<p>
-  <strong>Email 1:</strong>
-  <%= @contact.email_1 %>
-</p>
-
-<p>
-  <strong>Email 2:</strong>
-  <%= @contact.email_2 %>
-</p>
-
-<p>
-  <strong>Email 3:</strong>
-  <%= @contact.email_3 %>
-</p>
-
-<p>
-  <strong>Phone cell:</strong>
-  <%= @contact.phone_cell %>
-</p>
-
-<p>
-  <strong>Phone home:</strong>
-  <%= @contact.phone_home %>
-</p>
-
-<p>
-  <strong>Phone work:</strong>
-  <%= @contact.phone_work %>
-</p>
-
-<p>
-  <strong>Phone other:</strong>
-  <%= @contact.phone_other %>
-</p>
-
-<p>
-  <strong>Fax:</strong>
-  <%= @contact.fax %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @contact.address %>
-</p>
-
-<p>
-  <strong>Address 2:</strong>
-  <%= @contact.address_2 %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @contact.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @contact.state %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @contact.zip %>
-</p>
-
-<p>
-  <strong>Birthday:</strong>
-  <%= @contact.birthday %>
-</p>
-
-<p>
-  <strong>Notes:</strong>
-  <%= @contact.notes %>
-</p>
-
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
