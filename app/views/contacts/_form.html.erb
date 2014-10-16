@@ -98,7 +98,11 @@
   <div class="form-group">
     <%= f.label :birthday, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.date_select :birthday, :class => 'text-field form-control' %>
+      <%= f.date_select :birthday,
+        :class => 'text-field form-control',
+        :include_blank => true,
+        :start_year => (Date.today.year - 110),
+        :end_year => (Date.today.year + 1) %>
     </div>
   </div>
   <div class="form-group">

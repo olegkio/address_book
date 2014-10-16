@@ -19,6 +19,8 @@ class ContactsController < ApplicationController
 
   # GET /contacts/1/edit
   def edit
+    # interesting code but probably not a good idea to set default birthday
+    # @contact.birthday = 18.years.ago if @user.birthday.nil?
   end
 
   # POST /contacts
